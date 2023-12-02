@@ -29,7 +29,22 @@ namespace DesktopUndipLibrary.Controller
             }
             return table;
         }
-        public void addedAdmin(string username , string password)
+        public DataTable selectAdmin(MySqlCommand command)
+        {
+            DataTable data = new DataTable();
+            try
+            {
+                string tampil = "SELECT * FROM Admin";
+                da = new MySqlConnector.MySqlDataAdapter(tampil, GetConn());
+                da.Fill(data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return data;
+        }
+        public void addedAdmin(string username, string password)
         {
             string add = "INSERT INTO Admin VALUES(" + "@Username,@Passwordd)";
             try
@@ -42,6 +57,20 @@ namespace DesktopUndipLibrary.Controller
             catch (Exception ex)
             {
                 MessageBox.Show("Adding Data Failed " + ex.Message);
+            }
+        }
+        public void deleteAdmin(string pass)
+        {
+            string delete = "DELETE FROM Admin WHERE Passwordd=" + pass;
+            try
+            {
+                cmd = new MySqlConnector.MySqlCommand(delete, GetConn());
+                cmd.Parameters.Add("Passwordd", MySqlConnector.MySqlDbType.VarChar).Value = pass;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Delete Failed" + ex.Message);  
             }
         }
     }

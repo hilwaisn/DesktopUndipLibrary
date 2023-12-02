@@ -29,5 +29,12 @@ namespace DesktopUndipLibrary
             up.Show();
             this.Hide();
         }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            FormSignIn up = new FormSignIn();
+            up.Show();
+            this.Hide();
+        }
     }
 }

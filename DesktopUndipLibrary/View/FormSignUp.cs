@@ -22,27 +22,9 @@ namespace DesktopUndipLibrary.View
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pictureBoxClosedEyes.Visible = false;
-            pictureBoxEyesOpen.Visible = true;
-        }
-        private void pictureBoxClosedEyes_Click(object sender, EventArgs e)
-        {
-            if (pictureBoxClosedEyes.Visible == true)
-            {
-                pictureBoxClosedEyes.Visible = false;
-                txtPassword.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void pictureBoxEyesOpen_Click(object sender, EventArgs e)
-        {
-            if (pictureBoxClosedEyes.Visible == false)
-            {
-                pictureBoxClosedEyes.Visible = true;
-                txtPassword.UseSystemPasswordChar = false;
-            }
-        }
-
+            pictureBoxClosedEyes.Visible = true;
+            pictureBoxEyesOpen.Visible = false;
+        }  
         private void btnCreate_Click(object sender, EventArgs e)
         {
             AdminController admController = new AdminController();
@@ -62,6 +44,19 @@ namespace DesktopUndipLibrary.View
             FormSign ba = new FormSign();
             ba.Show();
             this.Hide();
+        }
+        private void pictureBoxClosedEyes_Click(object sender, EventArgs e)
+        {
+            pictureBoxEyesOpen.Visible = true;
+            pictureBoxClosedEyes.Visible = false;
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void pictureBoxEyesOpen_Click(object sender, EventArgs e)
+        {
+            pictureBoxEyesOpen.Visible = false;
+            pictureBoxClosedEyes.Visible = true;
+            txtPassword.UseSystemPasswordChar = false;
         }
     }
 }

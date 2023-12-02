@@ -3,54 +3,99 @@ USE UndipLibrary;
 
 CREATE TABLE Admin(
 	Username VARCHAR(10),
-	Passwordd VARCHAR(10)
+	Passwordd VARCHAR(10) PRIMARY KEY
 );
 
-CREATE TABLE Anggota(
-	IdAnggota VARCHAR(12) PRIMARY KEY,
-	Nama VARCHAR(40),
-	ProgramStudi VARCHAR(45),
-	TempatLahir VARCHAR(20),
-	TanggalLahir DATE,
-	NomorTelepon INT (13),
-	Alamat VARCHAR (50)
+CREATE TABLE Member(
+	MemberId VARCHAR(12) PRIMARY KEY,
+	Namee VARCHAR(45),
+	StudyProgram VARCHAR(45),
+	PlaceofBirth VARCHAR(50),
+	DateofBirth DATE,
+	TelephoneNumber VARCHAR(13),
+	Address VARCHAR (50)
 );
 
-CREATE TABLE Rak(
+CREATE TABLE Rack(
 	Id VARCHAR(2) PRIMARY KEY,
-	Nama VARCHAR(4)
+	Namee VARCHAR(4)
 );
 
-CREATE TABLE KoleksiBuku(
+CREATE TABLE BookCollection(
 	Id VARCHAR(4) PRIMARY KEY,
-	Nama VARCHAR(10)
+	Namee VARCHAR(10)
 );
 
-CREATE TABLE Buku(
-	IdBuku VARCHAR(5) PRIMARY KEY,
-	Judul VARCHAR(100),
-	Pengarang VARCHAR(50),
-	TahunTerbit INT(4),
-	Stok INT (3),
-	IdKoleksi VARCHAR(4),
-	IdRak VARCHAR(2)
+CREATE TABLE Book(
+	BookId VARCHAR(5) PRIMARY KEY,
+	Title VARCHAR(100),
+	Author VARCHAR(50),
+	IssueYear INT(4),
+	Stock INT (3),
+	CollectionId VARCHAR(4),
+	ShelfId VARCHAR(2),
+	CONSTRAINT FOREIGN KEY (CollectionId) REFERENCES BookCollection(Id),
+	CONSTRAINT FOREIGN KEY (ShelfId) REFERENCES Rack(Id)
 );
 
-CREATE TABLE Peminjaman(
+CREATE TABLE Borrowing(
 	Id VARCHAR(5) PRIMARY KEY,
-	TanggalPinjam DATE,
-	TanggalKembali DATE,
-	IdAnggota VARCHAR(12),
-	IdBuku VARCHAR(5)
+	LoanDate DATE,
+	ReturnDate DATE,
+	Namee VARCHAR(45),
+	MemberId VARCHAR(12),
+	BookId VARCHAR(5),
+	CONSTRAINT FOREIGN KEY (MemberId) REFERENCES Member(MemberId),
+	CONSTRAINT FOREIGN KEY (BookId) REFERENCES Book(BookId)
 );
 
-CREATE TABLE Pengunjung(
+CREATE TABLE Visitors(
 	Id VARCHAR(5) PRIMARY KEY,
-	Nama VARCHAR(50),
-	JenisKelamin VARCHAR(10),
-	ProgramStudi VARCHAR(45),
-	Keperluan VARCHAR(10),
-	Cari VARCHAR(10),
-	Tanggal	DATE,
-	Jam TIME
+	Namee VARCHAR(50),
+	Gender CHAR(1),
+	StudyProgram VARCHAR(45),
+	Needs VARCHAR(10),
+	Search VARCHAR(10),
+	Datee DATE,
+	Timee TIME
 );
+
+
+DROP DATABASE undiplibrary;
+DROP TABLE Visitors;
+INSERT INTO Admin VALUES ('hilwahhh','123456'),('olaa','000000'),('hilwaisn','170845');
+
+INSERT INTO Member VALUES ('01022211000','Hilwa Isnaini Marfuah','S1-Akuntansi','Kabupaten Semarang','2004-03-15','083861250068','Sejambu'),
+('01022311001','Namira Afian Fadila','S1-Perbankan','Kota Salatiga','2004-02-28','082241573268','Kecandran'),
+('01022311002','Ayunda Rizky Suryanto','S1-Perbankan','Kota Salatiga','2004-08-30','085865554402','Tingkir'),
+('02042211008','Fadilah Aulia Muthmainah','S1-Teknik Mesin','Kota Kebumen','2004-10-22','085865554402','Kebumen'),
+('01022211001','Nur Jamilah','S1-Akuntansi','Kabupaten Bandung Barat','2004-10-25','083854426758','Cimahi'),
+('01022311003','Kuni Fathiyatul Mubarokah','S1-Perbankan','Kota Salatiga','2004-04-20','081809460983','Argomulyo');
+
+INSERT INTO Rack VALUES ('01','R001'),
+('02','R002'),
+('03','R003'),
+('04','R004'),
+('05','R005'),
+('06','R006');
+
+INSERT INTO BookCollection VALUES ('A001','Ekonomi'),
+('A002','Geografi'),
+('A003','Sosiologi'),
+('A004','Sejarah'),
+('B001','Biologi'),
+('B002','Kimia'),
+('B003','Fisika'),
+('C001','Matematika'),
+('D001','Psikologi'),
+('E001','Religi');
+
+INSERT INTO Book VALUES ('02023','Pengantar Akuntansi','Abdul Hafiz Tanjung',2001,10,'A001','06'),
+('01012','Anatomi Tubuh Manusia','Irfiyah Firoroh',2012,5,'B001','05'),
+('01030','Sejarah Candi Borobudur','Jilla Arum',2020,8,'A004','06');
+
+INSERT INTO Borrowing VALUES ('P0011','2023-12-02','2023-12-09','Hilwa Isnaini Marfuah','01022211000','02023'),
+('P0012','2023-12-02','2023-12-09','Namira Afian Fadila','01022311001','02023');
+
+INSERT INTO Visitors VALUES ('V0001','Aditya Chandra Prasetya','L','S1-Teknik Informatika','Belajar','Buku','2023-12-02','09:00'),
+('V0002','Rizo Pranata','L','S1-Teknik Industri','Belajar','Buku','2023-12-02','09:50');
