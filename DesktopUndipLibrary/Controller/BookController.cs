@@ -44,9 +44,9 @@ namespace DesktopUndipLibrary.Controller
             }
             return data;
         }
-        public void addedBook(string id, string title, string author, int year, int stock, string collection, string shelf)
+        public void addedBook(string id, string title, string author, string year, int stock, string collection, string shelf)
         {
-            string add = "INSERT INTO Book VALUES(" + "@Username,@Passwordd)";
+            string add = "INSERT INTO Book VALUES(" + "@BookId,@Title,@Author,@IssueYear,@Stock,@CollectionId,@ShelfId)";
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(add, GetConn());
@@ -70,7 +70,7 @@ namespace DesktopUndipLibrary.Controller
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(delete, GetConn());
-                cmd.Parameters.Add("Passwordd", MySqlConnector.MySqlDbType.VarChar).Value = id;
+                cmd.Parameters.Add("BookId", MySqlConnector.MySqlDbType.VarChar).Value = id;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace DesktopUndipLibrary.Controller
         }
         public void updateBook(string id, string title, string author, int year, int stock, string collection, string shelf)
         {
-            string update = "UPDATE Book SET " + "BookId=@BookId,Title=@Title,Author=@Author, IssueYear=@IssueYear, Stock=@Stock, CollectionId=@CollectionId, ShelfId=@ShelfId" + "WHERE BookId=" + id;
+            string update = "UPDATE Book SET " + "BookId=@BookId,Title=@Title,Author=@Author, IssueYear=@IssueYear, Stock=@Stock, CollectionId=@CollectionId, ShelfId=@ShelfId " + "WHERE BookId=" + id;
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(update, GetConn());

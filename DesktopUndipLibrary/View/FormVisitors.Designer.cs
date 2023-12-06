@@ -33,7 +33,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pictureBoxBook = new System.Windows.Forms.PictureBox();
             this.pictureBoxMember = new System.Windows.Forms.PictureBox();
@@ -47,16 +47,24 @@
             this.btnMember = new System.Windows.Forms.Button();
             this.btnBook = new System.Windows.Forms.Button();
             this.pictureBoxUndipLogo = new System.Windows.Forms.PictureBox();
-            this.txtDeletePassword = new System.Windows.Forms.TextBox();
-            this.txtDeleteUsername = new System.Windows.Forms.TextBox();
-            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.dataGridViewVisitors = new System.Windows.Forms.DataGridView();
+            this.txtDeleteId = new System.Windows.Forms.TextBox();
+            this.printDocumentVisitors = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialogVisitors = new System.Windows.Forms.PrintPreviewDialog();
+            this.txtDeleteName = new System.Windows.Forms.TextBox();
+            this.txtDeleteGender = new System.Windows.Forms.TextBox();
+            this.txtDeleteStudy = new System.Windows.Forms.TextBox();
+            this.txtDeleteNeeds = new System.Windows.Forms.TextBox();
+            this.txtDeleteSearch = new System.Windows.Forms.TextBox();
+            this.txtDeleteDate = new System.Windows.Forms.TextBox();
+            this.txtDeleteTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisitors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVisitors)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -108,18 +116,20 @@
             this.btnPrint.TabIndex = 26;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(343, 631);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 40);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdate.Location = new System.Drawing.Point(343, 631);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(110, 40);
+            this.btnUpdate.TabIndex = 27;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -132,6 +142,7 @@
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pictureBoxBook
             // 
@@ -224,6 +235,7 @@
             this.btnVisitors.Text = "VISITORS";
             this.btnVisitors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVisitors.UseVisualStyleBackColor = false;
+            this.btnVisitors.Click += new System.EventHandler(this.btnVisitors_Click);
             // 
             // btnAdmin
             // 
@@ -236,6 +248,7 @@
             this.btnAdmin.Text = "ADMIN";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnMember
             // 
@@ -276,36 +289,98 @@
             this.pictureBoxUndipLogo.TabIndex = 65;
             this.pictureBoxUndipLogo.TabStop = false;
             // 
-            // txtDeletePassword
+            // dataGridViewVisitors
             // 
-            this.txtDeletePassword.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDeletePassword.Location = new System.Drawing.Point(317, 586);
-            this.txtDeletePassword.Multiline = true;
-            this.txtDeletePassword.Name = "txtDeletePassword";
-            this.txtDeletePassword.Size = new System.Drawing.Size(10, 12);
-            this.txtDeletePassword.TabIndex = 64;
+            this.dataGridViewVisitors.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewVisitors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVisitors.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewVisitors.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.dataGridViewVisitors.Location = new System.Drawing.Point(231, 107);
+            this.dataGridViewVisitors.Name = "dataGridViewVisitors";
+            this.dataGridViewVisitors.RowHeadersWidth = 62;
+            this.dataGridViewVisitors.RowTemplate.Height = 28;
+            this.dataGridViewVisitors.Size = new System.Drawing.Size(945, 503);
+            this.dataGridViewVisitors.TabIndex = 62;
+            this.dataGridViewVisitors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellContentClick);
             // 
-            // txtDeleteUsername
+            // txtDeleteId
             // 
-            this.txtDeleteUsername.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDeleteUsername.Location = new System.Drawing.Point(286, 586);
-            this.txtDeleteUsername.Multiline = true;
-            this.txtDeleteUsername.Name = "txtDeleteUsername";
-            this.txtDeleteUsername.Size = new System.Drawing.Size(10, 12);
-            this.txtDeleteUsername.TabIndex = 63;
+            this.txtDeleteId.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteId.Location = new System.Drawing.Point(8, 517);
+            this.txtDeleteId.Name = "txtDeleteId";
+            this.txtDeleteId.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteId.TabIndex = 77;
             // 
-            // dataGridViewMain
+            // printDocumentVisitors
             // 
-            this.dataGridViewMain.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMain.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewMain.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.dataGridViewMain.Location = new System.Drawing.Point(227, 107);
-            this.dataGridViewMain.Name = "dataGridViewMain";
-            this.dataGridViewMain.RowHeadersWidth = 62;
-            this.dataGridViewMain.RowTemplate.Height = 28;
-            this.dataGridViewMain.Size = new System.Drawing.Size(898, 503);
-            this.dataGridViewMain.TabIndex = 62;
+            this.printDocumentVisitors.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentVisitors_PrintPage);
+            // 
+            // printPreviewDialogVisitors
+            // 
+            this.printPreviewDialogVisitors.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogVisitors.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogVisitors.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogVisitors.Enabled = true;
+            this.printPreviewDialogVisitors.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogVisitors.Icon")));
+            this.printPreviewDialogVisitors.Name = "printPreviewDialogVisitors";
+            this.printPreviewDialogVisitors.Visible = false;
+            this.printPreviewDialogVisitors.Load += new System.EventHandler(this.printPreviewDialogVisitors_Load);
+            // 
+            // txtDeleteName
+            // 
+            this.txtDeleteName.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteName.Location = new System.Drawing.Point(8, 288);
+            this.txtDeleteName.Name = "txtDeleteName";
+            this.txtDeleteName.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteName.TabIndex = 78;
+            // 
+            // txtDeleteGender
+            // 
+            this.txtDeleteGender.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteGender.Location = new System.Drawing.Point(9, 527);
+            this.txtDeleteGender.Name = "txtDeleteGender";
+            this.txtDeleteGender.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteGender.TabIndex = 79;
+            // 
+            // txtDeleteStudy
+            // 
+            this.txtDeleteStudy.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteStudy.Location = new System.Drawing.Point(7, 352);
+            this.txtDeleteStudy.Name = "txtDeleteStudy";
+            this.txtDeleteStudy.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteStudy.TabIndex = 80;
+            // 
+            // txtDeleteNeeds
+            // 
+            this.txtDeleteNeeds.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteNeeds.Location = new System.Drawing.Point(8, 390);
+            this.txtDeleteNeeds.Name = "txtDeleteNeeds";
+            this.txtDeleteNeeds.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteNeeds.TabIndex = 81;
+            // 
+            // txtDeleteSearch
+            // 
+            this.txtDeleteSearch.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteSearch.Location = new System.Drawing.Point(7, 449);
+            this.txtDeleteSearch.Name = "txtDeleteSearch";
+            this.txtDeleteSearch.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteSearch.TabIndex = 82;
+            // 
+            // txtDeleteDate
+            // 
+            this.txtDeleteDate.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteDate.Location = new System.Drawing.Point(9, 543);
+            this.txtDeleteDate.Name = "txtDeleteDate";
+            this.txtDeleteDate.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteDate.TabIndex = 83;
+            // 
+            // txtDeleteTime
+            // 
+            this.txtDeleteTime.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDeleteTime.Location = new System.Drawing.Point(7, 558);
+            this.txtDeleteTime.Name = "txtDeleteTime";
+            this.txtDeleteTime.Size = new System.Drawing.Size(1, 26);
+            this.txtDeleteTime.TabIndex = 84;
             // 
             // FormVisitors
             // 
@@ -313,7 +388,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Horse_Statue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1128, 694);
+            this.ClientSize = new System.Drawing.Size(1178, 694);
+            this.Controls.Add(this.txtDeleteTime);
+            this.Controls.Add(this.txtDeleteDate);
+            this.Controls.Add(this.txtDeleteSearch);
+            this.Controls.Add(this.txtDeleteNeeds);
+            this.Controls.Add(this.txtDeleteStudy);
+            this.Controls.Add(this.txtDeleteGender);
+            this.Controls.Add(this.txtDeleteName);
+            this.Controls.Add(this.txtDeleteId);
             this.Controls.Add(this.pictureBoxBook);
             this.Controls.Add(this.pictureBoxMember);
             this.Controls.Add(this.pictureBoxVisitors);
@@ -326,11 +409,9 @@
             this.Controls.Add(this.btnMember);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.pictureBoxUndipLogo);
-            this.Controls.Add(this.txtDeletePassword);
-            this.Controls.Add(this.txtDeleteUsername);
-            this.Controls.Add(this.dataGridViewMain);
+            this.Controls.Add(this.dataGridViewVisitors);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
@@ -345,7 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVisitors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +437,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBoxBook;
         private System.Windows.Forms.PictureBox pictureBoxMember;
@@ -370,8 +451,16 @@
         private System.Windows.Forms.Button btnMember;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.PictureBox pictureBoxUndipLogo;
-        private System.Windows.Forms.TextBox txtDeletePassword;
-        private System.Windows.Forms.TextBox txtDeleteUsername;
-        private System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.DataGridView dataGridViewVisitors;
+        private System.Windows.Forms.TextBox txtDeleteId;
+        private System.Drawing.Printing.PrintDocument printDocumentVisitors;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogVisitors;
+        private System.Windows.Forms.TextBox txtDeleteName;
+        private System.Windows.Forms.TextBox txtDeleteGender;
+        private System.Windows.Forms.TextBox txtDeleteStudy;
+        private System.Windows.Forms.TextBox txtDeleteNeeds;
+        private System.Windows.Forms.TextBox txtDeleteSearch;
+        private System.Windows.Forms.TextBox txtDeleteDate;
+        private System.Windows.Forms.TextBox txtDeleteTime;
     }
 }

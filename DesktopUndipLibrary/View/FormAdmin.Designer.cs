@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
-            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAdmin = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txtDeleteUsername = new System.Windows.Forms.TextBox();
-            this.txtDeletePassword = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pictureBoxUndipLogo = new System.Windows.Forms.PictureBox();
@@ -47,7 +45,11 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnMember = new System.Windows.Forms.Button();
             this.btnBook = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMember)).BeginInit();
@@ -56,26 +58,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewMain
+            // dataGridViewAdmin
             // 
-            this.dataGridViewMain.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMain.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewMain.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.dataGridViewMain.Location = new System.Drawing.Point(227, 107);
-            this.dataGridViewMain.Name = "dataGridViewMain";
-            this.dataGridViewMain.RowHeadersWidth = 62;
-            this.dataGridViewMain.RowTemplate.Height = 28;
-            this.dataGridViewMain.Size = new System.Drawing.Size(898, 503);
-            this.dataGridViewMain.TabIndex = 5;
-            this.dataGridViewMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellContentClick);
+            this.dataGridViewAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewAdmin.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdmin.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewAdmin.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.dataGridViewAdmin.Location = new System.Drawing.Point(231, 107);
+            this.dataGridViewAdmin.Name = "dataGridViewAdmin";
+            this.dataGridViewAdmin.RowHeadersWidth = 62;
+            this.dataGridViewAdmin.RowTemplate.Height = 28;
+            this.dataGridViewAdmin.Size = new System.Drawing.Size(609, 503);
+            this.dataGridViewAdmin.TabIndex = 5;
+            this.dataGridViewAdmin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellClick);
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.Location = new System.Drawing.Point(350, 631);
+            this.btnDelete.Location = new System.Drawing.Point(352, 633);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(146, 40);
             this.btnDelete.TabIndex = 7;
@@ -83,30 +87,13 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtDeleteUsername
-            // 
-            this.txtDeleteUsername.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDeleteUsername.Location = new System.Drawing.Point(286, 586);
-            this.txtDeleteUsername.Multiline = true;
-            this.txtDeleteUsername.Name = "txtDeleteUsername";
-            this.txtDeleteUsername.Size = new System.Drawing.Size(10, 12);
-            this.txtDeleteUsername.TabIndex = 8;
-            // 
-            // txtDeletePassword
-            // 
-            this.txtDeletePassword.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDeletePassword.Location = new System.Drawing.Point(317, 586);
-            this.txtDeletePassword.Multiline = true;
-            this.txtDeletePassword.Name = "txtDeletePassword";
-            this.txtDeletePassword.Size = new System.Drawing.Size(10, 12);
-            this.txtDeletePassword.TabIndex = 9;
-            // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnClear.Location = new System.Drawing.Point(610, 633);
+            this.btnClear.Location = new System.Drawing.Point(621, 633);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(146, 40);
             this.btnClear.TabIndex = 10;
@@ -116,10 +103,11 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(882, 633);
+            this.btnCancel.Location = new System.Drawing.Point(887, 633);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(146, 40);
             this.btnCancel.TabIndex = 11;
@@ -129,6 +117,7 @@
             // 
             // pictureBoxUndipLogo
             // 
+            this.pictureBoxUndipLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxUndipLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxUndipLogo.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Undip_Logo;
             this.pictureBoxUndipLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -142,6 +131,7 @@
             // 
             // pictureBoxBook
             // 
+            this.pictureBoxBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxBook.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Book;
             this.pictureBoxBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -153,6 +143,7 @@
             // 
             // pictureBoxMember
             // 
+            this.pictureBoxMember.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxMember.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Member;
             this.pictureBoxMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -164,6 +155,7 @@
             // 
             // pictureBoxVisitors
             // 
+            this.pictureBoxVisitors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxVisitors.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Visitors;
             this.pictureBoxVisitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -175,6 +167,7 @@
             // 
             // pictureBoxAdmin
             // 
+            this.pictureBoxAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxAdmin.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -186,6 +179,7 @@
             // 
             // pictureBoxAccount
             // 
+            this.pictureBoxAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxAccount.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxAccount.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -197,6 +191,7 @@
             // 
             // lblUndip
             // 
+            this.lblUndip.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUndip.AutoSize = true;
             this.lblUndip.BackColor = System.Drawing.Color.Transparent;
             this.lblUndip.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,6 +204,7 @@
             // 
             // btnTransaction
             // 
+            this.btnTransaction.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTransaction.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnTransaction.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaction.Location = new System.Drawing.Point(1, 590);
@@ -222,6 +218,7 @@
             // 
             // btnVisitors
             // 
+            this.btnVisitors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnVisitors.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitors.Location = new System.Drawing.Point(1, 335);
@@ -231,9 +228,11 @@
             this.btnVisitors.Text = "VISITORS";
             this.btnVisitors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVisitors.UseVisualStyleBackColor = false;
+            this.btnVisitors.Click += new System.EventHandler(this.btnVisitors_Click);
             // 
             // btnAdmin
             // 
+            this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAdmin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(1, 251);
@@ -246,6 +245,7 @@
             // 
             // btnMember
             // 
+            this.btnMember.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnMember.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMember.Location = new System.Drawing.Point(1, 421);
@@ -259,6 +259,7 @@
             // 
             // btnBook
             // 
+            this.btnBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBook.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.Location = new System.Drawing.Point(1, 506);
@@ -270,6 +271,53 @@
             this.btnBook.UseVisualStyleBackColor = false;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPassword.Enabled = false;
+            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(855, 336);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(261, 35);
+            this.txtPassword.TabIndex = 65;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUsername.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(855, 194);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(261, 30);
+            this.txtUsername.TabIndex = 64;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblPassword.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblPassword.Location = new System.Drawing.Point(854, 276);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(163, 39);
+            this.lblPassword.TabIndex = 63;
+            this.lblPassword.Text = "Password :";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUsername.Location = new System.Drawing.Point(854, 143);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(186, 39);
+            this.lblUsername.TabIndex = 62;
+            this.lblUsername.Text = "Username : ";
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -277,6 +325,10 @@
             this.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Horse_Statue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1128, 694);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.pictureBoxBook);
             this.Controls.Add(this.pictureBoxMember);
             this.Controls.Add(this.pictureBoxVisitors);
@@ -291,15 +343,13 @@
             this.Controls.Add(this.pictureBoxUndipLogo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.txtDeletePassword);
-            this.Controls.Add(this.txtDeleteUsername);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.dataGridViewMain);
+            this.Controls.Add(this.dataGridViewAdmin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdmin";
             this.Text = "Admin Page";
             this.Load += new System.EventHandler(this.FormMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMember)).EndInit();
@@ -312,10 +362,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.DataGridView dataGridViewAdmin;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox txtDeleteUsername;
-        private System.Windows.Forms.TextBox txtDeletePassword;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox pictureBoxUndipLogo;
@@ -330,5 +378,9 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnMember;
         private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.TextBox txtPassword;
     }
 }

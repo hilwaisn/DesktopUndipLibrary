@@ -11,38 +11,40 @@ using System.Windows.Forms;
 
 namespace DesktopUndipLibrary.View
 {
-    public partial class FormAddBook : Form
+    public partial class FormAddVisitors : Form
     {
-        private BookController bookControl;
-        public FormAddBook()
+        private VisitorsController visitorsController;
+        public FormAddVisitors()
         {
             InitializeComponent();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bookControl = new BookController();
-            int Stock = Convert.ToInt32(txtStock.Text);
+            visitorsController = new VisitorsController();
+            string gender = rbtGenderM.Checked ? "M" : "L";
             try
             {
-                bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
-                MessageBox.Show("New Book Added", "Add Book",
+                visitorsController.addedVisitors(txtId.Text, txtNamee.Text, gender, txtStudyProgram.Text, txtNeeds.Text, txtSearch.Text, dateTimePickerVisitors.Value);
+                MessageBox.Show("New Visitors Added", "Add Visitors",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Show();
-                txtTitle.Focus();
-                FormBook book = new FormBook();
-                book.Show();
+                txtNamee.Focus();
+                FormVisitors visitors = new FormVisitors();
+                visitors.Show();
                 this.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FormBook book = new FormBook();
-            book.Show();
+            FormVisitors visitors = new FormVisitors();
+            visitors.Show();
             this.Hide();
         }
     }

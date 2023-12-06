@@ -1,4 +1,5 @@
 ﻿using DesktopUndipLibrary.Controller;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,27 +12,25 @@ using System.Windows.Forms;
 
 namespace DesktopUndipLibrary.View
 {
-    public partial class FormAddBook : Form
+    public partial class FormAddMember : Form
     {
-        private BookController bookControl;
-        public FormAddBook()
+        private MemberController memberController;
+        public FormAddMember()
         {
             InitializeComponent();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bookControl = new BookController();
-            int Stock = Convert.ToInt32(txtStock.Text);
+            memberController = new MemberController();
             try
             {
-                bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
-                MessageBox.Show("New Book Added", "Add Book",
+                memberController.addedMember(txtMemberId.Text, txtNamee.Text, txtStudyProgram.Text, txtPlaceofBirth.Text, dateTimePickerDateofBirth.Value, txtTelephoneNumber.Text, txtAddress.Text);
+                MessageBox.Show("New Member Added", "Add Member",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Show();
-                txtTitle.Focus();
-                FormBook book = new FormBook();
-                book.Show();
+                txtNamee.Focus();
+                FormMember member = new FormMember();
+                member.Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -39,10 +38,11 @@ namespace DesktopUndipLibrary.View
                 MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FormBook book = new FormBook();
-            book.Show();
+            FormMember member = new FormMember();
+            member.Show();
             this.Hide();
         }
     }

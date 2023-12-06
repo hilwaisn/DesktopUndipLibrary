@@ -1,19 +1,16 @@
 ﻿using DesktopUndipLibrary.Model;
 using MySqlConnector;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace DesktopUndipLibrary.Controller
 {
-    internal class VisitorsController : Model.Connection
+    internal class TransactionController : Model.Connection
     {
         private Connection connect = new Connection();
         public DataTable getList(MySqlCommand command)
@@ -31,12 +28,12 @@ namespace DesktopUndipLibrary.Controller
             }
             return table;
         }
-        public DataTable selectVisitors(MySqlCommand command)
+        public DataTable selectTransaction(MySqlCommand command)
         {
             DataTable data = new DataTable();
             try
             {
-                string tampil = "SELECT * FROM Visitors";
+                string tampil = "SELECT * FROM Transactionn";
                 da = new MySqlConnector.MySqlDataAdapter(tampil, GetConn());
                 da.Fill(data);
             }
@@ -46,19 +43,19 @@ namespace DesktopUndipLibrary.Controller
             }
             return data;
         }
-        public void addedVisitors(string id, string name, string gender, string study, string needs, string search, DateTime date)
+        public void addedTransaction(string id, DateTime loan, DateTime returnid, string name, string member, string book, string inform)
         {
-            string add = "INSERT INTO Visitors VALUES(" + "@Id,@Namee,@Gender,@StudyProgram,@Needs,@Search,@Datee)";
+            string add = "INSERT INTO Transactionn VALUES(" + "@Id,@LoanDate,@ReturnDate,@Namee,@MemberId,@BookId)";
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(add, GetConn());
                 cmd.Parameters.Add("@Id", MySqlConnector.MySqlDbType.VarChar).Value = id;
+                cmd.Parameters.Add("@LoanDate", MySqlConnector.MySqlDbType.Date).Value = loan;
+                cmd.Parameters.Add("@ReturnDate", MySqlConnector.MySqlDbType.Date).Value = returnid;
                 cmd.Parameters.Add("@Namee", MySqlConnector.MySqlDbType.VarChar).Value = name;
-                cmd.Parameters.Add("@StudyProgram", MySqlConnector.MySqlDbType.Int32).Value = study;
-                cmd.Parameters.Add("@Gender", MySqlConnector.MySqlDbType.VarChar).Value = gender;
-                cmd.Parameters.Add("@Needs", MySqlConnector.MySqlDbType.Int32).Value = needs;
-                cmd.Parameters.Add("@Search", MySqlConnector.MySqlDbType.VarChar).Value = search;
-                cmd.Parameters.Add("@Datee", MySqlConnector.MySqlDbType.VarChar).Value = date;
+                cmd.Parameters.Add("@MemberId", MySqlConnector.MySqlDbType.VarChar).Value = member;
+                cmd.Parameters.Add("@BookId", MySqlConnector.MySqlDbType.VarChar).Value = book;
+                cmd.Parameters.Add("@Information", MySqlConnector.MySqlDbType.VarChar).Value = inform;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -66,9 +63,9 @@ namespace DesktopUndipLibrary.Controller
                 MessageBox.Show("Adding Data Failed " + ex.Message);
             }
         }
-        public void deleteVisitors(string id)
+        public void deleteTransaction(string id)
         {
-            string delete = "DELETE FROM Visitors WHERE Id=@id";
+            string delete = "DELETE FROM Transactionn WHERE Id=@id";
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(delete, GetConn());
@@ -80,9 +77,9 @@ namespace DesktopUndipLibrary.Controller
                 MessageBox.Show("Delete Failed" + ex.Message);
             }
         }
-        public void updateVisitors(string id, string name, string gender, string study, string needs, string search, DateTime date)
+        public void updateTransaction(string id, DateTime loan, DateTime returnid, string name, string member, string book, string inform)
         {
-            string update = "UPDATE Visitors SET Namee=@Namee, Gender=@Gender, StudyProgram=@StudyProgram, Needs=@Needs, Search=@Search, Datee=@Datee WHERE Id=@id";
+            string update = "UPDATE Transactionn SET LoanDate=@LoanDate, ReturnDate=@ReturnDate, Namee=@Namee, MemberId=@MemberId, BookId=@BookId, Information=@Information WHERE Id=@Id";
             try
             {
                 using (MySqlConnector.MySqlConnection conn = GetConn())
@@ -94,12 +91,12 @@ namespace DesktopUndipLibrary.Controller
                     using (MySqlConnector.MySqlCommand cmd = new MySqlConnector.MySqlCommand(update, conn))
                     {
                         cmd.Parameters.Add("@Id", MySqlConnector.MySqlDbType.VarChar).Value = id;
+                        cmd.Parameters.Add("@LoanDate", MySqlConnector.MySqlDbType.Date).Value = loan;
+                        cmd.Parameters.Add("@ReturnDate", MySqlConnector.MySqlDbType.Date).Value = returnid;
                         cmd.Parameters.Add("@Namee", MySqlConnector.MySqlDbType.VarChar).Value = name;
-                        cmd.Parameters.Add("@Gender", MySqlConnector.MySqlDbType.VarChar).Value = gender;
-                        cmd.Parameters.Add("@StudyProgram", MySqlConnector.MySqlDbType.VarChar).Value = study;
-                        cmd.Parameters.Add("@Needs", MySqlConnector.MySqlDbType.VarChar).Value = needs;
-                        cmd.Parameters.Add("@Search", MySqlConnector.MySqlDbType.VarChar).Value = search;
-                        cmd.Parameters.Add("@Datee", MySqlConnector.MySqlDbType.Date).Value = date;
+                        cmd.Parameters.Add("@MemberId", MySqlConnector.MySqlDbType.VarChar).Value = member;
+                        cmd.Parameters.Add("@BookId", MySqlConnector.MySqlDbType.VarChar).Value = book;
+                        cmd.Parameters.Add("@Information", MySqlConnector.MySqlDbType.VarChar).Value = inform;
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -118,14 +115,14 @@ namespace DesktopUndipLibrary.Controller
                 MessageBox.Show("Update Data Failed: " + ex.Message);
             }
         }
-        public DataTable searchVisitors(string search)
+        public DataTable searchTransaction(string search)
         {
             DataTable table = new DataTable();
             try
             {
                 MySqlCommand command = new MySqlCommand(
-                    "SELECT * FROM Visitors WHERE CONCAT(Id, Namee, Gender," +
-                    "StudyProgram, Needs, Search, Datee)LIKE '%" + search + "%'", connect.GetConn());
+                    "SELECT * FROM Transaction WHERE CONCAT(Id, LoanDate, ReturnDate," +
+                    "Namee, MemberId, BookId, Information)LIKE '%" + search + "%'", connect.GetConn());
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 adapter.Fill(table);
             }
@@ -135,6 +132,5 @@ namespace DesktopUndipLibrary.Controller
             }
             return table;
         }
-
     }
 }

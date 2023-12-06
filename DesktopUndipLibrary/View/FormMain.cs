@@ -20,8 +20,10 @@ namespace DesktopUndipLibrary.View
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FormSign sign = new FormSign();
-            sign.Show();
+            if (MessageBox.Show("Contiue or not", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                Application.Exit();
+            FormMain main = new FormMain();
+            main.Show();
             this.Hide();
         }
 
@@ -41,9 +43,9 @@ namespace DesktopUndipLibrary.View
 
         private void btnMember_Click(object sender, EventArgs e)
         {
-            /*FormMember member = new FormMember();
+            FormMember member = new FormMember();
             member.Show();
-            this.Hide();*/
+            this.Hide();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -55,9 +57,14 @@ namespace DesktopUndipLibrary.View
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            /*FormTransaction transaction = new FormTransaction();
+            FormTransaction transaction = new FormTransaction();
             transaction.Show();
-            this.Hide();*/
+            this.Hide();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

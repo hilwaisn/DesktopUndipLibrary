@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopUndipLibrary.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace DesktopUndipLibrary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSign());
+            Application.Run(new FormMain());
         }
     }
 }

@@ -38,13 +38,14 @@ CREATE TABLE Book(
 	CONSTRAINT FOREIGN KEY (ShelfId) REFERENCES Rack(Id)
 );
 
-CREATE TABLE Borrowing(
+CREATE TABLE Transactionn(
 	Id VARCHAR(5) PRIMARY KEY,
 	LoanDate DATE,
 	ReturnDate DATE,
 	Namee VARCHAR(45),
 	MemberId VARCHAR(12),
 	BookId VARCHAR(5),
+	Information VARCHAR(13),
 	CONSTRAINT FOREIGN KEY (MemberId) REFERENCES Member(MemberId),
 	CONSTRAINT FOREIGN KEY (BookId) REFERENCES Book(BookId)
 );
@@ -52,17 +53,16 @@ CREATE TABLE Borrowing(
 CREATE TABLE Visitors(
 	Id VARCHAR(5) PRIMARY KEY,
 	Namee VARCHAR(50),
-	Gender CHAR(1),
+	Gender VARCHAR(2),
 	StudyProgram VARCHAR(45),
 	Needs VARCHAR(10),
 	Search VARCHAR(10),
-	Datee DATE,
-	Timee TIME
+	Datee DATE
 );
 
 
 DROP DATABASE undiplibrary;
-DROP TABLE Visitors;
+DROP TABLE Transactionn;
 INSERT INTO Admin VALUES ('hilwahhh','123456'),('olaa','000000'),('hilwaisn','170845');
 
 INSERT INTO Member VALUES ('01022211000','Hilwa Isnaini Marfuah','S1-Akuntansi','Kabupaten Semarang','2004-03-15','083861250068','Sejambu'),
@@ -94,8 +94,8 @@ INSERT INTO Book VALUES ('02023','Pengantar Akuntansi','Abdul Hafiz Tanjung',200
 ('01012','Anatomi Tubuh Manusia','Irfiyah Firoroh',2012,5,'B001','05'),
 ('01030','Sejarah Candi Borobudur','Jilla Arum',2020,8,'A004','06');
 
-INSERT INTO Borrowing VALUES ('P0011','2023-12-02','2023-12-09','Hilwa Isnaini Marfuah','01022211000','02023'),
-('P0012','2023-12-02','2023-12-09','Namira Afian Fadila','01022311001','02023');
+INSERT INTO Transactionn VALUES ('P0011','2023-12-02','2023-12-09','Hilwa Isnaini Marfuah','01022211000','02023', 'Dipinjam'),
+('P0012','2023-12-02','2023-12-09','Namira Afian Fadila','01022311001','02023','Dipinjam');
 
-INSERT INTO Visitors VALUES ('V0001','Aditya Chandra Prasetya','L','S1-Teknik Informatika','Belajar','Buku','2023-12-02','09:00'),
-('V0002','Rizo Pranata','L','S1-Teknik Industri','Belajar','Buku','2023-12-02','09:50');
+INSERT INTO Visitors VALUES ('V0001','Aditya Chandra Prasetya','M','S1-Teknik Informatika','Belajar','Buku','2023-12-02'),
+('V0002','Rizo Pranata','M','S1-Teknik Industri','Belajar','Buku','2023-12-02');

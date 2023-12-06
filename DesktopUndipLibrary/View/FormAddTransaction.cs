@@ -11,27 +11,26 @@ using System.Windows.Forms;
 
 namespace DesktopUndipLibrary.View
 {
-    public partial class FormAddBook : Form
+    public partial class FormAddTransaction : Form
     {
-        private BookController bookControl;
-        public FormAddBook()
+        private TransactionController transactioncontrol;
+        public FormAddTransaction()
         {
             InitializeComponent();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bookControl = new BookController();
-            int Stock = Convert.ToInt32(txtStock.Text);
+            transactioncontrol = new TransactionController();
             try
             {
-                bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
-                MessageBox.Show("New Book Added", "Add Book",
+                transactioncontrol.addedTransaction(txtId.Text, dateTimePickerLoan.Value, dateTimePickerReturn.Value, txtNamee.Text, txtMemberId.Text, txtBookId.Text, txtInformation.Text);
+                MessageBox.Show("New Transaction Added", "Add Transaction",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Show();
-                txtTitle.Focus();
-                FormBook book = new FormBook();
-                book.Show();
+                txtNamee.Focus();
+                FormTransaction transaction = new FormTransaction();
+                transaction.Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -39,10 +38,11 @@ namespace DesktopUndipLibrary.View
                 MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FormBook book = new FormBook();
-            book.Show();
+            FormTransaction transaction = new FormTransaction();
+            transaction.Show();
             this.Hide();
         }
     }

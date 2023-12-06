@@ -133,6 +133,16 @@ namespace DesktopUndipLibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Front_Undip_Building {
+            get {
+                object obj = ResourceManager.GetObject("Front Undip Building", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Horse_Statue {
             get {
                 object obj = ResourceManager.GetObject("Horse Statue", resourceCulture);
@@ -176,6 +186,46 @@ namespace DesktopUndipLibrary.Properties {
         internal static System.Drawing.Bitmap Monochrome_Library_Building {
             get {
                 object obj = ResourceManager.GetObject("Monochrome Library Building", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undip_Alley_Entrance_Gate {
+            get {
+                object obj = ResourceManager.GetObject("Undip Alley Entrance Gate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undip_Gate {
+            get {
+                object obj = ResourceManager.GetObject("Undip Gate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undip_Gate1 {
+            get {
+                object obj = ResourceManager.GetObject("Undip Gate1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undip_Library {
+            get {
+                object obj = ResourceManager.GetObject("Undip Library", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

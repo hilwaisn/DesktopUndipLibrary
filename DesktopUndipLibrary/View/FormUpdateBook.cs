@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DesktopUndipLibrary.View
 {
-    public partial class FormAddBook : Form
+    public partial class FormUpdateBook : Form
     {
         private BookController bookControl;
-        public FormAddBook()
+        public FormUpdateBook()
         {
             InitializeComponent();
         }
@@ -23,27 +24,27 @@ namespace DesktopUndipLibrary.View
         {
             bookControl = new BookController();
             int Stock = Convert.ToInt32(txtStock.Text);
-            try
-            {
-                bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
-                MessageBox.Show("New Book Added", "Add Book",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtTitle.Focus();
-                FormBook book = new FormBook();
-                book.Show();
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            int Year = Convert.ToInt32(txtIssueYear.Text);
+            bookControl.updateBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, Year, Stock, txtCollectionId.Text, txtShelfId.Text);
+            this.Controls.Clear();
+            this.InitializeComponent();
+            txtTitle.Focus();
+            MessageBox.Show("Data Saved");
+            FormBook book = new FormBook();
+            book.Show();
+            this.Hide();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             FormBook book = new FormBook();
             book.Show();
             this.Hide();
+        }
+
+        private void FormUpdateBook_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
