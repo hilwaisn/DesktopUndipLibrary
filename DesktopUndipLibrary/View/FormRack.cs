@@ -21,6 +21,7 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
             showRack();
         }
+
         bool showRack()
         {
             dataGridViewRack.DataSource = rackControl.selectRack
@@ -28,10 +29,12 @@ namespace DesktopUndipLibrary.View
             dataGridViewRack.RowTemplate.Height = 20;
             return true;
         }
+
         private void FormRack_Load(object sender, EventArgs e)
         {
             showRack();
         }
+
         bool verify()
         {
             if ((txtId.Text == "") || (txtName.Text == ""))
@@ -43,6 +46,7 @@ namespace DesktopUndipLibrary.View
                 return true;
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -59,6 +63,7 @@ namespace DesktopUndipLibrary.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtId.Clear();
@@ -71,6 +76,7 @@ namespace DesktopUndipLibrary.View
             book.Show();
             this.Hide();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             rackControl = new RackController();
@@ -88,6 +94,7 @@ namespace DesktopUndipLibrary.View
             }
             showRack();
         }
+
         private void dataGridViewRack_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = dataGridViewRack.CurrentRow.Cells[0].Value.ToString();

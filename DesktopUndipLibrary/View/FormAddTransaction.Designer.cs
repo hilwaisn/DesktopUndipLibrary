@@ -44,16 +44,17 @@
             this.lblUndip = new System.Windows.Forms.Label();
             this.pictureBoxUndipLogo = new System.Windows.Forms.PictureBox();
             this.panelAddBook = new System.Windows.Forms.Panel();
-            this.dateTimePickerLoan = new System.Windows.Forms.DateTimePicker();
-            this.lblMemberId = new System.Windows.Forms.Label();
             this.txtInformation = new System.Windows.Forms.TextBox();
             this.lblInformation = new System.Windows.Forms.Label();
+            this.dateTimePickerLoan = new System.Windows.Forms.DateTimePicker();
+            this.lblMemberId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).BeginInit();
             this.panelAddBook.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePickerReturn
             // 
+            this.dateTimePickerReturn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerReturn.Location = new System.Drawing.Point(429, 158);
             this.dateTimePickerReturn.Name = "dateTimePickerReturn";
             this.dateTimePickerReturn.Size = new System.Drawing.Size(310, 26);
@@ -61,6 +62,7 @@
             // 
             // txtBookId
             // 
+            this.txtBookId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBookId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookId.Location = new System.Drawing.Point(429, 350);
             this.txtBookId.Name = "txtBookId";
@@ -69,6 +71,7 @@
             // 
             // txtMemberId
             // 
+            this.txtMemberId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMemberId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMemberId.Location = new System.Drawing.Point(429, 286);
             this.txtMemberId.Name = "txtMemberId";
@@ -77,6 +80,7 @@
             // 
             // txtNamee
             // 
+            this.txtNamee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNamee.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamee.Location = new System.Drawing.Point(429, 214);
             this.txtNamee.Name = "txtNamee";
@@ -85,6 +89,7 @@
             // 
             // lblTelephoneNumber
             // 
+            this.lblTelephoneNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelephoneNumber.AutoSize = true;
             this.lblTelephoneNumber.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelephoneNumber.Location = new System.Drawing.Point(62, 353);
@@ -95,6 +100,7 @@
             // 
             // lblLoan
             // 
+            this.lblLoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLoan.AutoSize = true;
             this.lblLoan.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoan.Location = new System.Drawing.Point(62, 85);
@@ -105,6 +111,7 @@
             // 
             // lblReturn
             // 
+            this.lblReturn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblReturn.AutoSize = true;
             this.lblReturn.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturn.Location = new System.Drawing.Point(62, 152);
@@ -115,6 +122,7 @@
             // 
             // lblNamee
             // 
+            this.lblNamee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNamee.AutoSize = true;
             this.lblNamee.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNamee.Location = new System.Drawing.Point(62, 221);
@@ -125,6 +133,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(429, 22);
             this.txtId.Name = "txtId";
@@ -133,6 +142,7 @@
             // 
             // lblId
             // 
+            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.Location = new System.Drawing.Point(62, 22);
@@ -143,6 +153,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
@@ -156,7 +167,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -170,6 +181,7 @@
             // 
             // lblUndip
             // 
+            this.lblUndip.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUndip.AutoSize = true;
             this.lblUndip.BackColor = System.Drawing.Color.Transparent;
             this.lblUndip.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,6 +194,7 @@
             // 
             // pictureBoxUndipLogo
             // 
+            this.pictureBoxUndipLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBoxUndipLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxUndipLogo.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Undip_Logo;
             this.pictureBoxUndipLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -195,6 +208,9 @@
             // 
             // panelAddBook
             // 
+            this.panelAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAddBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelAddBook.Controls.Add(this.txtInformation);
             this.panelAddBook.Controls.Add(this.lblInformation);
@@ -215,25 +231,9 @@
             this.panelAddBook.Size = new System.Drawing.Size(807, 476);
             this.panelAddBook.TabIndex = 102;
             // 
-            // dateTimePickerLoan
-            // 
-            this.dateTimePickerLoan.Location = new System.Drawing.Point(429, 91);
-            this.dateTimePickerLoan.Name = "dateTimePickerLoan";
-            this.dateTimePickerLoan.Size = new System.Drawing.Size(310, 26);
-            this.dateTimePickerLoan.TabIndex = 16;
-            // 
-            // lblMemberId
-            // 
-            this.lblMemberId.AutoSize = true;
-            this.lblMemberId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberId.Location = new System.Drawing.Point(62, 289);
-            this.lblMemberId.Name = "lblMemberId";
-            this.lblMemberId.Size = new System.Drawing.Size(154, 35);
-            this.lblMemberId.TabIndex = 7;
-            this.lblMemberId.Text = "MEMBER ID";
-            // 
             // txtInformation
             // 
+            this.txtInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtInformation.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInformation.Location = new System.Drawing.Point(429, 411);
             this.txtInformation.Name = "txtInformation";
@@ -242,6 +242,7 @@
             // 
             // lblInformation
             // 
+            this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.Location = new System.Drawing.Point(62, 414);
@@ -249,6 +250,25 @@
             this.lblInformation.Size = new System.Drawing.Size(185, 35);
             this.lblInformation.TabIndex = 17;
             this.lblInformation.Text = "INFORMATION";
+            // 
+            // dateTimePickerLoan
+            // 
+            this.dateTimePickerLoan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePickerLoan.Location = new System.Drawing.Point(429, 91);
+            this.dateTimePickerLoan.Name = "dateTimePickerLoan";
+            this.dateTimePickerLoan.Size = new System.Drawing.Size(310, 26);
+            this.dateTimePickerLoan.TabIndex = 16;
+            // 
+            // lblMemberId
+            // 
+            this.lblMemberId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMemberId.AutoSize = true;
+            this.lblMemberId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberId.Location = new System.Drawing.Point(62, 289);
+            this.lblMemberId.Name = "lblMemberId";
+            this.lblMemberId.Size = new System.Drawing.Size(154, 35);
+            this.lblMemberId.TabIndex = 7;
+            this.lblMemberId.Text = "MEMBER ID";
             // 
             // FormAddTransaction
             // 

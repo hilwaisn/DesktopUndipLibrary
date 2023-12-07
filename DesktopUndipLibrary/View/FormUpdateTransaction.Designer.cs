@@ -54,6 +54,7 @@
             // 
             // dateTimePickerReturn
             // 
+            this.dateTimePickerReturn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerReturn.Location = new System.Drawing.Point(429, 156);
             this.dateTimePickerReturn.Name = "dateTimePickerReturn";
             this.dateTimePickerReturn.Size = new System.Drawing.Size(310, 26);
@@ -61,6 +62,7 @@
             // 
             // txtBookId
             // 
+            this.txtBookId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBookId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookId.Location = new System.Drawing.Point(429, 342);
             this.txtBookId.Name = "txtBookId";
@@ -69,6 +71,7 @@
             // 
             // txtMemberId
             // 
+            this.txtMemberId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMemberId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMemberId.Location = new System.Drawing.Point(429, 278);
             this.txtMemberId.Name = "txtMemberId";
@@ -77,6 +80,7 @@
             // 
             // txtNamee
             // 
+            this.txtNamee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNamee.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamee.Location = new System.Drawing.Point(429, 207);
             this.txtNamee.Name = "txtNamee";
@@ -85,7 +89,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -99,6 +103,7 @@
             // 
             // lblUndip
             // 
+            this.lblUndip.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUndip.AutoSize = true;
             this.lblUndip.BackColor = System.Drawing.Color.Transparent;
             this.lblUndip.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +116,7 @@
             // 
             // pictureBoxUndipLogo
             // 
+            this.pictureBoxUndipLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBoxUndipLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxUndipLogo.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Undip_Logo;
             this.pictureBoxUndipLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -124,6 +130,9 @@
             // 
             // panelAddBook
             // 
+            this.panelAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAddBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelAddBook.Controls.Add(this.txtInformation);
             this.panelAddBook.Controls.Add(this.lblInformation);
@@ -146,6 +155,7 @@
             // 
             // txtInformation
             // 
+            this.txtInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtInformation.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInformation.Location = new System.Drawing.Point(429, 411);
             this.txtInformation.Name = "txtInformation";
@@ -154,6 +164,7 @@
             // 
             // lblInformation
             // 
+            this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.Location = new System.Drawing.Point(62, 414);
@@ -164,6 +175,7 @@
             // 
             // dateTimePickerLoan
             // 
+            this.dateTimePickerLoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerLoan.Location = new System.Drawing.Point(429, 92);
             this.dateTimePickerLoan.Name = "dateTimePickerLoan";
             this.dateTimePickerLoan.Size = new System.Drawing.Size(310, 26);
@@ -171,6 +183,7 @@
             // 
             // lblMemberId
             // 
+            this.lblMemberId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMemberId.AutoSize = true;
             this.lblMemberId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberId.Location = new System.Drawing.Point(62, 281);
@@ -181,6 +194,7 @@
             // 
             // lblTelephoneNumber
             // 
+            this.lblTelephoneNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelephoneNumber.AutoSize = true;
             this.lblTelephoneNumber.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelephoneNumber.Location = new System.Drawing.Point(62, 345);
@@ -191,6 +205,7 @@
             // 
             // lblLoan
             // 
+            this.lblLoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLoan.AutoSize = true;
             this.lblLoan.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoan.Location = new System.Drawing.Point(62, 86);
@@ -201,6 +216,7 @@
             // 
             // lblReturn
             // 
+            this.lblReturn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblReturn.AutoSize = true;
             this.lblReturn.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturn.Location = new System.Drawing.Point(62, 150);
@@ -211,6 +227,7 @@
             // 
             // lblNamee
             // 
+            this.lblNamee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNamee.AutoSize = true;
             this.lblNamee.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNamee.Location = new System.Drawing.Point(62, 214);
@@ -221,6 +238,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(429, 24);
@@ -230,6 +248,7 @@
             // 
             // lblId
             // 
+            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.Location = new System.Drawing.Point(62, 31);
@@ -240,6 +259,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;

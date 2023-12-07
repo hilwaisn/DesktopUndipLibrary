@@ -19,6 +19,7 @@ namespace DesktopUndipLibrary.View
         {
             InitializeComponent();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             memberController = new MemberController();

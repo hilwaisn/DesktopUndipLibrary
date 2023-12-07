@@ -20,6 +20,7 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
             showMember();
         }
+
         bool showMember()
         {
             dataGridViewMember.DataSource = memberController.selectMember
@@ -27,10 +28,12 @@ namespace DesktopUndipLibrary.View
             dataGridViewMember.RowTemplate.Height = 20;
             return true;
         }
+
         private void FormMember_Load(object sender, EventArgs e)
         {
             showMember();
         }
+
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             FormAdmin admin = new FormAdmin();
@@ -108,6 +111,7 @@ namespace DesktopUndipLibrary.View
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         bool verify()
         {
             if ((txtDeleteMemberId.Text == "") || (txtDeleteNamee.Text == "") || (txtDeleteStudy.Text == "") || (txtDeletePlaceofBirth.Text == "") || (txtDeleteDateofBirth.Text == "") || (txtDeleteTelephoneNumber.Text == "") || (txtDeleteAddress.Text == ""))
@@ -119,6 +123,7 @@ namespace DesktopUndipLibrary.View
                 return true;
             }
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtDeleteMemberId.Clear();

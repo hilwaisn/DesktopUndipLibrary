@@ -45,6 +45,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(79, 608);
@@ -57,6 +58,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(362, 608);
@@ -69,6 +71,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
@@ -96,6 +99,7 @@
             // 
             // panelAddBook
             // 
+            this.panelAddBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAddBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelAddBook.Controls.Add(this.txtName);
             this.panelAddBook.Controls.Add(this.lblNamee);
@@ -144,6 +148,7 @@
             // 
             // dataGridViewRack
             // 
+            this.dataGridViewRack.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewRack.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewRack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRack.Location = new System.Drawing.Point(51, 43);

@@ -45,6 +45,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
@@ -58,6 +59,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(393, 611);
@@ -70,6 +72,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(88, 608);
@@ -96,6 +99,7 @@
             // 
             // lblId
             // 
+            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.Location = new System.Drawing.Point(19, 39);
@@ -106,6 +110,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtId.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(154, 36);
             this.txtId.Name = "txtId";
@@ -114,6 +119,7 @@
             // 
             // lblNamee
             // 
+            this.lblNamee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNamee.AutoSize = true;
             this.lblNamee.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNamee.Location = new System.Drawing.Point(19, 102);
@@ -124,6 +130,7 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(154, 99);
             this.txtName.Name = "txtName";
@@ -132,6 +139,7 @@
             // 
             // panelAddBook
             // 
+            this.panelAddBook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAddBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelAddBook.Controls.Add(this.txtName);
             this.panelAddBook.Controls.Add(this.lblNamee);
@@ -144,6 +152,7 @@
             // 
             // dataGridViewBookCollection
             // 
+            this.dataGridViewBookCollection.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewBookCollection.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewBookCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBookCollection.Location = new System.Drawing.Point(51, 43);

@@ -21,6 +21,7 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
             showBookCollection();
         }
+
         bool showBookCollection()
         {
             dataGridViewBookCollection.DataSource = bookcollectionControl.selectBookCollection
@@ -28,10 +29,12 @@ namespace DesktopUndipLibrary.View
             dataGridViewBookCollection.RowTemplate.Height = 20;
             return true;
         }
+
         private void FormBookCollection_Load(object sender, EventArgs e)
         {
             showBookCollection();
         }
+
         bool verify()
         {
             if ((txtId.Text == "") || (txtName.Text == ""))
@@ -43,6 +46,7 @@ namespace DesktopUndipLibrary.View
                 return true;
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -72,6 +76,7 @@ namespace DesktopUndipLibrary.View
             book.Show();
             this.Hide();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             bookcollectionControl = new BookCollectionController();

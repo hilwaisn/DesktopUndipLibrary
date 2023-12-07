@@ -21,6 +21,7 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
             showAdmin();
         }
+
         bool showAdmin()
         {
             dataGridViewAdmin.DataSource = adminControl.selectAdmin
@@ -28,6 +29,7 @@ namespace DesktopUndipLibrary.View
             dataGridViewAdmin.RowTemplate.Height = 20;
             return true;
         }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             showAdmin();
@@ -81,12 +83,14 @@ namespace DesktopUndipLibrary.View
             main.Show();
             this.Hide();
         }
+
         private void btnVisitors_Click(object sender, EventArgs e)
         {
             FormVisitors vi = new FormVisitors();
             vi.Show();
             this.Hide();
         }
+
         private void btnMember_Click(object sender, EventArgs e)
         {
             FormMember member = new FormMember();

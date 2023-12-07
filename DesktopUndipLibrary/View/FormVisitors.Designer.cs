@@ -69,6 +69,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
@@ -82,6 +83,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -94,6 +96,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -107,6 +110,7 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrint.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPrint.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -120,6 +124,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -133,6 +138,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -146,6 +152,7 @@
             // 
             // pictureBoxBook
             // 
+            this.pictureBoxBook.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxBook.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Book;
             this.pictureBoxBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -157,6 +164,7 @@
             // 
             // pictureBoxMember
             // 
+            this.pictureBoxMember.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxMember.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Member;
             this.pictureBoxMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -168,6 +176,7 @@
             // 
             // pictureBoxVisitors
             // 
+            this.pictureBoxVisitors.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxVisitors.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Visitors;
             this.pictureBoxVisitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -179,6 +188,7 @@
             // 
             // pictureBoxAdmin
             // 
+            this.pictureBoxAdmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxAdmin.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -190,6 +200,7 @@
             // 
             // pictureBoxAccount
             // 
+            this.pictureBoxAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxAccount.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxAccount.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -201,6 +212,7 @@
             // 
             // lblUndip
             // 
+            this.lblUndip.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUndip.AutoSize = true;
             this.lblUndip.BackColor = System.Drawing.Color.Transparent;
             this.lblUndip.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +225,7 @@
             // 
             // btnTransaction
             // 
+            this.btnTransaction.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnTransaction.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnTransaction.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaction.Location = new System.Drawing.Point(1, 590);
@@ -226,6 +239,7 @@
             // 
             // btnVisitors
             // 
+            this.btnVisitors.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnVisitors.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitors.Location = new System.Drawing.Point(1, 335);
@@ -239,6 +253,7 @@
             // 
             // btnAdmin
             // 
+            this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAdmin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(1, 251);
@@ -252,6 +267,7 @@
             // 
             // btnMember
             // 
+            this.btnMember.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnMember.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMember.Location = new System.Drawing.Point(1, 421);
@@ -265,6 +281,7 @@
             // 
             // btnBook
             // 
+            this.btnBook.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBook.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.Location = new System.Drawing.Point(1, 506);
@@ -278,6 +295,7 @@
             // 
             // pictureBoxUndipLogo
             // 
+            this.pictureBoxUndipLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBoxUndipLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxUndipLogo.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Undip_Logo;
             this.pictureBoxUndipLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -291,6 +309,9 @@
             // 
             // dataGridViewVisitors
             // 
+            this.dataGridViewVisitors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewVisitors.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewVisitors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVisitors.GridColor = System.Drawing.SystemColors.Control;

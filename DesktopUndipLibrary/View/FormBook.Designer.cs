@@ -73,6 +73,7 @@
             // 
             // pictureBoxBook
             // 
+            this.pictureBoxBook.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxBook.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Book;
             this.pictureBoxBook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -84,6 +85,7 @@
             // 
             // pictureBoxMember
             // 
+            this.pictureBoxMember.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxMember.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Member;
             this.pictureBoxMember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -95,6 +97,7 @@
             // 
             // pictureBoxVisitors
             // 
+            this.pictureBoxVisitors.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxVisitors.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Visitors;
             this.pictureBoxVisitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -106,6 +109,7 @@
             // 
             // pictureBoxAdmin
             // 
+            this.pictureBoxAdmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxAdmin.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -117,6 +121,7 @@
             // 
             // pictureBoxAccount
             // 
+            this.pictureBoxAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxAccount.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxAccount.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Account1;
             this.pictureBoxAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -141,6 +146,7 @@
             // 
             // btnTransaction
             // 
+            this.btnTransaction.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnTransaction.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnTransaction.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransaction.Location = new System.Drawing.Point(1, 590);
@@ -154,6 +160,7 @@
             // 
             // btnVisitors
             // 
+            this.btnVisitors.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnVisitors.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnVisitors.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitors.Location = new System.Drawing.Point(1, 335);
@@ -167,6 +174,7 @@
             // 
             // btnAdmin
             // 
+            this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAdmin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAdmin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(1, 251);
@@ -180,6 +188,7 @@
             // 
             // btnMember
             // 
+            this.btnMember.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnMember.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnMember.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMember.Location = new System.Drawing.Point(1, 421);
@@ -193,6 +202,7 @@
             // 
             // btnBook
             // 
+            this.btnBook.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnBook.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnBook.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.Location = new System.Drawing.Point(1, 506);
@@ -230,13 +240,13 @@
             this.dataGridViewBook.Name = "dataGridViewBook";
             this.dataGridViewBook.RowHeadersWidth = 62;
             this.dataGridViewBook.RowTemplate.Height = 28;
-            this.dataGridViewBook.Size = new System.Drawing.Size(1095, 503);
+            this.dataGridViewBook.Size = new System.Drawing.Size(1085, 503);
             this.dataGridViewBook.TabIndex = 83;
             this.dataGridViewBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMain_CellContentClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -250,7 +260,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -264,7 +274,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrint.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPrint.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -292,7 +302,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -306,7 +316,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -320,7 +330,6 @@
             // 
             // btnBookCollection
             // 
-            this.btnBookCollection.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBookCollection.BackColor = System.Drawing.Color.Gold;
             this.btnBookCollection.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookCollection.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -334,7 +343,6 @@
             // 
             // btnRack
             // 
-            this.btnRack.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRack.BackColor = System.Drawing.Color.Gold;
             this.btnRack.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -356,6 +364,7 @@
             // 
             // txtDeleteTitle
             // 
+            this.txtDeleteTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDeleteTitle.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtDeleteTitle.Location = new System.Drawing.Point(21, 594);
             this.txtDeleteTitle.Name = "txtDeleteTitle";
@@ -364,6 +373,7 @@
             // 
             // txtDeleteIssueYear
             // 
+            this.txtDeleteIssueYear.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDeleteIssueYear.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtDeleteIssueYear.Location = new System.Drawing.Point(53, 594);
             this.txtDeleteIssueYear.Name = "txtDeleteIssueYear";
@@ -372,6 +382,7 @@
             // 
             // txtDeleteAuthor
             // 
+            this.txtDeleteAuthor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDeleteAuthor.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtDeleteAuthor.Location = new System.Drawing.Point(37, 594);
             this.txtDeleteAuthor.Name = "txtDeleteAuthor";
@@ -380,6 +391,7 @@
             // 
             // txtDeleteShelfId
             // 
+            this.txtDeleteShelfId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDeleteShelfId.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtDeleteShelfId.Location = new System.Drawing.Point(109, 594);
             this.txtDeleteShelfId.Name = "txtDeleteShelfId";
@@ -388,6 +400,7 @@
             // 
             // txtCollectionId
             // 
+            this.txtCollectionId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCollectionId.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtCollectionId.Location = new System.Drawing.Point(93, 594);
             this.txtCollectionId.Name = "txtCollectionId";
@@ -396,6 +409,7 @@
             // 
             // txtDeleteStock
             // 
+            this.txtDeleteStock.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDeleteStock.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtDeleteStock.Location = new System.Drawing.Point(77, 594);
             this.txtDeleteStock.Name = "txtDeleteStock";
@@ -428,7 +442,7 @@
             // 
             // txtForSearch
             // 
-            this.txtForSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtForSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtForSearch.Location = new System.Drawing.Point(965, 77);
             this.txtForSearch.Name = "txtForSearch";
             this.txtForSearch.Size = new System.Drawing.Size(224, 26);
@@ -436,7 +450,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Location = new System.Drawing.Point(1201, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 30);

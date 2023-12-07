@@ -60,9 +60,6 @@ CREATE TABLE Visitors(
 	Datee DATE
 );
 
-
-DROP DATABASE undiplibrary;
-DROP TABLE Transactionn;
 INSERT INTO Admin VALUES ('hilwahhh','123456'),('olaa','000000'),('hilwaisn','170845');
 
 INSERT INTO Member VALUES ('01022211000','Hilwa Isnaini Marfuah','S1-Akuntansi','Kabupaten Semarang','2004-03-15','083861250068','Sejambu'),

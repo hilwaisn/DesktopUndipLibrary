@@ -23,6 +23,7 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
             showBook();
         }
+
         bool showBook()
         {
             dataGridViewBook.DataSource = bookControl.selectBook
@@ -30,16 +31,19 @@ namespace DesktopUndipLibrary.View
             dataGridViewBook.RowTemplate.Height = 30;
             return true;
         }
+
         private void FormBook_Load(object sender, EventArgs e)
         {
             showBook();
         }
+
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             FormAdmin admin = new FormAdmin();
             admin.Show();
             this.Hide();
         }
+
         private void btnVisitors_Click(object sender, EventArgs e)
         {
             FormVisitors visitors = new FormVisitors();
@@ -96,6 +100,7 @@ namespace DesktopUndipLibrary.View
                 return true;
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (verify())
@@ -120,6 +125,7 @@ namespace DesktopUndipLibrary.View
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtDeleteBookId.Clear();
@@ -130,23 +136,27 @@ namespace DesktopUndipLibrary.View
             txtCollectionId.Clear();
             txtDeleteShelfId.Clear();
         }
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printPreviewDialogBook.Document = printDocumentBook;
             printPreviewDialogBook.ShowDialog();
         }
+
         private void btnRack_Click(object sender, EventArgs e)
         {
             FormRack rack = new FormRack();
             rack.Show();
             this.Hide();
         }
+
         private void btnBookCollection_Click(object sender, EventArgs e)
         {
             FormBookCollection bookCollection = new FormBookCollection();
             bookCollection.Show();
             this.Hide();
         }
+
         private void dataGridViewMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtDeleteBookId.Text = dataGridViewBook.CurrentRow.Cells[0].Value.ToString();
@@ -157,6 +167,7 @@ namespace DesktopUndipLibrary.View
             txtCollectionId.Text = dataGridViewBook.CurrentRow.Cells[5].Value.ToString();
             txtDeleteShelfId.Text = dataGridViewBook.CurrentRow.Cells[6].Value.ToString();
         }
+
         private void printDocumentBook_PrintPage(object sender, PrintPageEventArgs e)
         {
             Bitmap btm = new Bitmap(this.dataGridViewBook.Width, this.dataGridViewBook.Height);
@@ -164,6 +175,7 @@ namespace DesktopUndipLibrary.View
             e.Graphics.DrawImage(btm, 45, 170);
             e.Graphics.DrawString(lblUndip.Text, new Font("Calibri", 23, FontStyle.Bold), Brushes.Black, new Point(185, 100));
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dataGridViewBook.DataSource = bookControl.searchBook(txtForSearch.Text);
