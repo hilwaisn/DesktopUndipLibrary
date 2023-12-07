@@ -24,6 +24,8 @@ namespace DesktopUndipLibrary.View
         {
             pictureBoxClosedEyes.Visible = true;
             pictureBoxEyesOpen.Visible = false;
+            txtUsername.MaxLength = 10;
+            txtPassword.MaxLength = 10;
         }  
         private void btnCreate_Click(object sender, EventArgs e)
         {
