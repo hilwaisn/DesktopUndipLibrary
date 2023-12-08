@@ -470,7 +470,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
     <None Include="Resource\Dream Faculty.jpeg" />
   </ItemGroup>
   <ItemGroup>
