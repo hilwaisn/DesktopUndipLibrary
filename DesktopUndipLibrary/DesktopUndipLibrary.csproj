@@ -257,6 +257,7 @@
     <Compile Include="Controller\MemberController.cs" />
     <Compile Include="Controller\RackController.cs" />
     <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Controller\ValidasiController.cs" />
     <Compile Include="Controller\VisitorsController.cs" />
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -469,6 +470,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resource\Dream Faculty.jpeg" />
   </ItemGroup>
   <ItemGroup>
@@ -509,6 +511,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\Front Undip Building.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Book Rack.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

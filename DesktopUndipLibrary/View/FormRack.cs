@@ -26,7 +26,7 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewRack.DataSource = rackControl.selectRack
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Rack"));
-            dataGridViewRack.RowTemplate.Height = 20;
+            dataGridViewRack.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
 

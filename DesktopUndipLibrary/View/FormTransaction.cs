@@ -24,11 +24,12 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewTransaction.DataSource = transactionControl.selectTransaction
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Transaction"));
-            dataGridViewTransaction.RowTemplate.Height = 30;
+            dataGridViewTransaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
         private void FormTransaction_Load(object sender, EventArgs e)
         {
+            txtForSearch.MaxLength = 10;
             showTransaction();
         }
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -78,8 +79,9 @@ namespace DesktopUndipLibrary.View
             utransaction.txtNamee.Text = this.dataGridViewTransaction.CurrentRow.Cells[3].Value.ToString();
             utransaction.txtMemberId.Text = this.dataGridViewTransaction.CurrentRow.Cells[4].Value.ToString();
             utransaction.txtBookId.Text = this.dataGridViewTransaction.CurrentRow.Cells[5].Value.ToString();
+            utransaction.txtInformation.Text = this.dataGridViewTransaction.CurrentRow.Cells[6].Value.ToString();
         }
-        //Kurang Information
+
         bool verify()
         {
             if ((txtDeleteId.Text == "") || (txtDeleteLoan.Text == "") || (txtDeleteReturn.Text == "") || (txtDeleteName.Text == "") || (txtDeleteMemberId.Text == "") || (txtDeleteBookId.Text == ""))
@@ -116,6 +118,7 @@ namespace DesktopUndipLibrary.View
             txtDeleteName.Clear();
             txtDeleteMemberId.Clear();
             txtDeleteBookId.Clear();
+            txtDeleteInformation.Clear();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

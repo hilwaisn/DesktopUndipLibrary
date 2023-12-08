@@ -18,6 +18,15 @@ namespace DesktopUndipLibrary.View
         {
             InitializeComponent();
         }
+        private void FormUpdateMember_Load(object sender, EventArgs e)
+        {
+            txtMemberId.MaxLength = 12;
+            txtNamee.MaxLength = 45;
+            txtStudyProgram.MaxLength = 45;
+            txtPlaceofBirth.MaxLength = 50;
+            txtTelephoneNumber.MaxLength = 13;
+            txtAddress.MaxLength = 50;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {

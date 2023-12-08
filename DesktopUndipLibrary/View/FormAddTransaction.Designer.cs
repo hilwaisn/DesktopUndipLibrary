@@ -285,6 +285,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddTransaction";
             this.Text = "Add Transaction Page";
+            this.Load += new System.EventHandler(this.FormAddTransaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();

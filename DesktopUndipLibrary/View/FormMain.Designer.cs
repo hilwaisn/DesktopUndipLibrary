@@ -42,12 +42,19 @@
             this.pictureBoxVisitors = new System.Windows.Forms.PictureBox();
             this.pictureBoxMember = new System.Windows.Forms.PictureBox();
             this.pictureBoxBook = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblVM = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisitors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBook)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxAccount
@@ -221,6 +228,60 @@
             this.pictureBoxBook.TabIndex = 50;
             this.pictureBoxBook.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lblVM);
+            this.panel1.Location = new System.Drawing.Point(239, 325);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(686, 265);
+            this.panel1.TabIndex = 51;
+            // 
+            // lblVM
+            // 
+            this.lblVM.AutoSize = true;
+            this.lblVM.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblVM.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVM.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblVM.Location = new System.Drawing.Point(2, 2);
+            this.lblVM.Name = "lblVM";
+            this.lblVM.Size = new System.Drawing.Size(682, 261);
+            this.lblVM.TabIndex = 0;
+            this.lblVM.Text = resources.GetString("lblVM.Text");
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label1.Location = new System.Drawing.Point(620, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(454, 203);
+            this.label1.TabIndex = 52;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Book_Rack;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ErrorImage = global::DesktopUndipLibrary.Properties.Resources.Book_Rack;
+            this.pictureBox1.Location = new System.Drawing.Point(239, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(367, 237);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Location = new System.Drawing.Point(619, 93);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(455, 203);
+            this.panel2.TabIndex = 54;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -228,6 +289,10 @@
             this.BackgroundImage = global::DesktopUndipLibrary.Properties.Resources.Horse_Statue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1128, 694);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBoxBook);
             this.Controls.Add(this.pictureBoxMember);
             this.Controls.Add(this.pictureBoxVisitors);
@@ -251,6 +316,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVisitors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBook)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +339,10 @@
         private System.Windows.Forms.PictureBox pictureBoxVisitors;
         private System.Windows.Forms.PictureBox pictureBoxMember;
         private System.Windows.Forms.PictureBox pictureBoxBook;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblVM;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

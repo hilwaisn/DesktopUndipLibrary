@@ -19,6 +19,17 @@ namespace DesktopUndipLibrary.View
             InitializeComponent();
         }
 
+        private void FormAddBook_Load(object sender, EventArgs e)
+        {
+            txtBookId.MaxLength = 5;
+            txtTitle.MaxLength = 100;
+            txtAuthor.MaxLength = 50;
+            txtIssueYear.MaxLength = 4;
+            txtStock.MaxLength = 3;
+            txtCollectionId.MaxLength = 5;
+            txtShelfId.MaxLength = 2;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             bookControl = new BookController();

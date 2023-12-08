@@ -28,12 +28,13 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewBook.DataSource = bookControl.selectBook
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Book"));
-            dataGridViewBook.RowTemplate.Height = 30;
+            dataGridViewBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
 
         private void FormBook_Load(object sender, EventArgs e)
         {
+            txtForSearch.MaxLength = 10;
             showBook();
         }
 
@@ -179,7 +180,7 @@ namespace DesktopUndipLibrary.View
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dataGridViewBook.DataSource = bookControl.searchBook(txtForSearch.Text);
-            dataGridViewBook.RowTemplate.Height = 30;
+            dataGridViewBook.RowTemplate.Height = 20;
         }
     }
 }

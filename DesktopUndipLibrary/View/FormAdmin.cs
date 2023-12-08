@@ -26,7 +26,7 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewAdmin.DataSource = adminControl.selectAdmin
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Admin"));
-            dataGridViewAdmin.RowTemplate.Height = 20;
+            dataGridViewAdmin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
 

@@ -309,6 +309,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddVisitors";
             this.Text = "Add Visitors Page";
+            this.Load += new System.EventHandler(this.FormAddVisitors_Load);
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();

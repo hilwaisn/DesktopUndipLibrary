@@ -148,6 +148,7 @@
             this.txtNamee.Name = "txtNamee";
             this.txtNamee.Size = new System.Drawing.Size(310, 42);
             this.txtNamee.TabIndex = 14;
+            this.txtNamee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamee_KeyPress);
             // 
             // txtStudyProgram
             // 
@@ -259,6 +260,7 @@
             this.txtMemberId.Name = "txtMemberId";
             this.txtMemberId.Size = new System.Drawing.Size(310, 42);
             this.txtMemberId.TabIndex = 1;
+            this.txtMemberId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMemberId_KeyPress);
             // 
             // lblMemberId
             // 
@@ -286,6 +288,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddMember";
             this.Text = "Add Member Page";
+            this.Load += new System.EventHandler(this.FormAddMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();

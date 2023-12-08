@@ -287,6 +287,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUpdateMember";
             this.Text = "Update Member Page";
+            this.Load += new System.EventHandler(this.FormUpdateMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();

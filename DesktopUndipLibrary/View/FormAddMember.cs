@@ -19,24 +19,55 @@ namespace DesktopUndipLibrary.View
         {
             InitializeComponent();
         }
-
+        private void FormAddMember_Load(object sender, EventArgs e)
+        {
+            txtMemberId.MaxLength = 12;
+            txtNamee.MaxLength = 45;
+            txtStudyProgram.MaxLength = 45;
+            txtPlaceofBirth.MaxLength = 50;
+            txtTelephoneNumber.MaxLength = 13;
+            txtAddress.MaxLength = 50;
+        }
+        bool verify()
+        {
+            if ((txtMemberId.Text == "") || (txtNamee.Text == "") || (txtStudyProgram.Text == "") || (txtPlaceofBirth.Text == "") || (txtTelephoneNumber.Text == "") || (txtAddress.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             memberController = new MemberController();
-            try
+            ValidasiController val = new ValidasiController();
+            if (verify())
             {
-                memberController.addedMember(txtMemberId.Text, txtNamee.Text, txtStudyProgram.Text, txtPlaceofBirth.Text, dateTimePickerDateofBirth.Value, txtTelephoneNumber.Text, txtAddress.Text);
-                MessageBox.Show("New Member Added", "Add Member",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtNamee.Focus();
-                FormMember member = new FormMember();
-                member.Show();
-                this.Hide();
+                if (val.valName(txtNamee.Text) && val.valName(txtAddress.Text))
+                {
+                    try
+                    {
+                        memberController.addedMember(txtMemberId.Text, txtNamee.Text, txtStudyProgram.Text, txtPlaceofBirth.Text, dateTimePickerDateofBirth.Value, txtTelephoneNumber.Text, txtAddress.Text);
+                        MessageBox.Show("New Member Added", "Add Member",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtNamee.Focus();
+                        FormMember member = new FormMember();
+                        member.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Empty field", "Add Member", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -45,6 +76,16 @@ namespace DesktopUndipLibrary.View
             FormMember member = new FormMember();
             member.Show();
             this.Hide();
+        }
+
+        private void txtMemberId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtNamee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

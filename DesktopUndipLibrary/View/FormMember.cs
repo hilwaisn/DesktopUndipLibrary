@@ -25,12 +25,13 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewMember.DataSource = memberController.selectMember
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Member"));
-            dataGridViewMember.RowTemplate.Height = 20;
-            return true;
+            dataGridViewMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;       
+                return true;
         }
 
         private void FormMember_Load(object sender, EventArgs e)
         {
+            txtForSearch.MaxLength = 10;
             showMember();
         }
 

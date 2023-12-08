@@ -121,6 +121,9 @@
   <data name="Horse Statue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Horse Statue.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Front Undip Building" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Front Undip Building.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Undip Gate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Undip Gate.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="Book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Member" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Member.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Color Library Building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Color Library Building.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,14 +160,11 @@
   <data name="Undip Library" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Undip Library.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Undip Gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Undip Gate.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Undip Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Undip Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Member" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Member.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Undip Gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Undip Gate.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Account1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,7 @@
   <data name="Color Library Building1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Color Library Building.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Front Undip Building" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Front Undip Building.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Book Rack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Book Rack.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

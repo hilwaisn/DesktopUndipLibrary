@@ -286,6 +286,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUpdateTransaction";
             this.Text = "Update Transaction Page";
+            this.Load += new System.EventHandler(this.FormUpdateTransaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();
@@ -312,7 +313,7 @@
         public System.Windows.Forms.TextBox txtNamee;
         public System.Windows.Forms.DateTimePicker dateTimePickerLoan;
         public System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox txtInformation;
         private System.Windows.Forms.Label lblInformation;
+        public System.Windows.Forms.TextBox txtInformation;
     }
 }

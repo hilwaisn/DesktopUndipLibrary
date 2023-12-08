@@ -26,7 +26,7 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewBookCollection.DataSource = bookcollectionControl.selectBookCollection
                 (new MySqlConnector.MySqlCommand("SELECT * FROM BookCollection"));
-            dataGridViewBookCollection.RowTemplate.Height = 20;
+            dataGridViewBookCollection.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
 

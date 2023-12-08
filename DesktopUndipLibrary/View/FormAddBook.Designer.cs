@@ -287,6 +287,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddBook";
             this.Text = "Add Book Page";
+            this.Load += new System.EventHandler(this.FormAddBook_Load);
             this.panelAddBook.ResumeLayout(false);
             this.panelAddBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndipLogo)).EndInit();

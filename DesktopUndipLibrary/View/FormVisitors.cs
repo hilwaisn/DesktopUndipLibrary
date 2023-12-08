@@ -24,7 +24,7 @@ namespace DesktopUndipLibrary.View
         {
             dataGridViewVisitors.DataSource = visitorsControl.selectVisitors
                 (new MySqlConnector.MySqlCommand("SELECT * FROM Visitors"));
-            dataGridViewVisitors.RowTemplate.Height = 20;
+            dataGridViewVisitors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             return true;
         }
         private void FormVisitors_Load(object sender, EventArgs e)
