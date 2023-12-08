@@ -139,6 +139,7 @@
             this.dateTimePickerDateofBirth.Name = "dateTimePickerDateofBirth";
             this.dateTimePickerDateofBirth.Size = new System.Drawing.Size(310, 26);
             this.dateTimePickerDateofBirth.TabIndex = 15;
+            this.dateTimePickerDateofBirth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerDateofBirth_KeyPress);
             // 
             // txtNamee
             // 

@@ -84,7 +84,7 @@ namespace DesktopUndipLibrary.View
 
         bool verify()
         {
-            if ((txtDeleteId.Text == "") || (txtDeleteLoan.Text == "") || (txtDeleteReturn.Text == "") || (txtDeleteName.Text == "") || (txtDeleteMemberId.Text == "") || (txtDeleteBookId.Text == ""))
+            if ((txtDeleteId.Text == "") || (txtDeleteLoan.Text == "") || (txtDeleteReturn.Text == "") || (txtDeleteName.Text == "") || (txtDeleteMemberId.Text == "") || (txtDeleteBookId.Text == "")||(txtDeleteInformation.Text==""))
             {
                 return false;
             }

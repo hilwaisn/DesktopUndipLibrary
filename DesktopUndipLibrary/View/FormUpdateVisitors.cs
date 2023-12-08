@@ -27,18 +27,37 @@ namespace DesktopUndipLibrary.View
             txtSearch.MaxLength = 10;
         }
 
+        bool verify()
+        {
+            if ((txtId.Text == "") || (txtNamee.Text == "") || (txtStudyProgram.Text == "") || (txtNeeds.Text == "") || (txtSearch.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             visitorsController = new VisitorsController();
-            string gender = rbtGenderM.Checked ? "M" : "L";
-            visitorsController.updateVisitors(txtId.Text, txtNamee.Text, gender, txtStudyProgram.Text, txtNeeds.Text, txtSearch.Text, dateTimePickerVisitors.Value);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            txtNamee.Focus();
-            MessageBox.Show("Data Saved");
-            FormVisitors visitors = new FormVisitors();
-            visitors.Show();
-            this.Hide();
+            ValidasiController val = new ValidasiController();
+            string gender = rbtGenderM.Checked ? "M" : "F";
+            if (verify())
+            {
+                if (val.valId(txtId.Text) && val.valName(txtNamee.Text) && val.valName(txtNamee.Text) && val.valStudy(txtStudyProgram.Text) && val.valName(txtNeeds.Text) && val.valName(txtSearch.Text))
+                {
+                    visitorsController.updateVisitors(txtId.Text, txtNamee.Text, gender, txtStudyProgram.Text, txtNeeds.Text, txtSearch.Text, dateTimePickerVisitors.Value);
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    txtNamee.Focus();
+                    MessageBox.Show("Data Saved");
+                    FormVisitors visitors = new FormVisitors();
+                    visitors.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

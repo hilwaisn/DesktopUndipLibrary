@@ -29,20 +29,38 @@ namespace DesktopUndipLibrary.View
             txtCollectionId.MaxLength = 5;
             txtShelfId.MaxLength = 2;
         }
+        bool verify()
+        {
+            if ((txtBookId.Text == "") || (txtTitle.Text == "") || (txtAuthor.Text == "") || (txtIssueYear.Text == "") || (txtStock.Text == "") || (txtCollectionId.Text == "") || (txtShelfId.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             bookControl = new BookController();
             int Stock = Convert.ToInt32(txtStock.Text);
             int Year = Convert.ToInt32(txtIssueYear.Text);
-            bookControl.updateBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, Year, Stock, txtCollectionId.Text, txtShelfId.Text);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            txtTitle.Focus();
-            MessageBox.Show("Data Saved");
-            FormBook book = new FormBook();
-            book.Show();
-            this.Hide();
+            ValidasiController val = new ValidasiController();
+            if (verify())
+            {
+                if (val.valId(txtBookId.Text) && val.valTitle(txtTitle.Text) || val.valName(txtAuthor.Text) || val.valTn(txtIssueYear.Text) || val.valTn(txtStock.Text) || val.valId(txtCollectionId.Text) || val.valId(txtShelfId.Text))
+                {
+                    bookControl.updateBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, Year, Stock, txtCollectionId.Text, txtShelfId.Text);
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    txtTitle.Focus();
+                    MessageBox.Show("Data Saved");
+                    FormBook book = new FormBook();
+                    book.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

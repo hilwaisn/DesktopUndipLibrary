@@ -29,26 +29,43 @@ namespace DesktopUndipLibrary.View
             txtCollectionId.MaxLength = 5;
             txtShelfId.MaxLength = 2;
         }
-
+        bool verify()
+        {
+            if ((txtBookId.Text == "") || (txtTitle.Text == "") || (txtAuthor.Text == "") || (txtIssueYear.Text == "") || (txtStock.Text == "")||(txtCollectionId.Text == "")|| (txtShelfId.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             bookControl = new BookController();
+            ValidasiController val = new ValidasiController();
             int Stock = Convert.ToInt32(txtStock.Text);
-            try
+            if (verify())
             {
-                bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
-                MessageBox.Show("New Book Added", "Add Book",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtTitle.Focus();
-                FormBook book = new FormBook();
-                book.Show();
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                if (val.valId(txtBookId.Text) && val.valTitle(txtTitle.Text) || val.valName(txtAuthor.Text) || val.valTn(txtIssueYear.Text) || val.valTn(txtStock.Text) || val.valId(txtCollectionId.Text) || val.valId(txtShelfId.Text))
+                {
+                    try
+                    {
+                        bookControl.addedBook(txtBookId.Text, txtTitle.Text, txtAuthor.Text, txtIssueYear.Text, Stock, txtCollectionId.Text, txtShelfId.Text);
+                        MessageBox.Show("New Book Added", "Add Book",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtTitle.Focus();
+                        FormBook book = new FormBook();
+                        book.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

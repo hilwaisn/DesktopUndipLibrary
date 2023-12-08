@@ -27,17 +27,36 @@ namespace DesktopUndipLibrary.View
             txtInformation.MaxLength = 13;
         }
 
+        bool verify()
+        {
+            if ((txtId.Text == "") || (txtNamee.Text == "") || (txtMemberId.Text == "") || (txtBookId.Text == "") || (txtInformation.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             transactioncontrol = new TransactionController();
-            transactioncontrol.updateTransaction(txtId.Text, dateTimePickerLoan.Value, dateTimePickerReturn.Value, txtNamee.Text, txtMemberId.Text, txtBookId.Text, txtInformation.Text);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            txtNamee.Focus();
-            MessageBox.Show("Data Saved");
-            FormTransaction transaction = new FormTransaction();
-            transaction.Show();
-            this.Hide();
+            ValidasiController val = new ValidasiController();
+            if (verify())
+            {
+                if (val.valId(txtId.Text) && val.valId(txtMemberId.Text) && val.valName(txtNamee.Text) && val.valId(txtBookId.Text) && val.valName(txtInformation.Text))
+                {
+                    transactioncontrol.updateTransaction(txtId.Text, dateTimePickerLoan.Value, dateTimePickerReturn.Value, txtNamee.Text, txtMemberId.Text, txtBookId.Text, txtInformation.Text);
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    txtNamee.Focus();
+                    MessageBox.Show("Data Saved");
+                    FormTransaction transaction = new FormTransaction();
+                    transaction.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -27,32 +27,68 @@ namespace DesktopUndipLibrary.View
             txtBookId.MaxLength = 5;
             txtInformation.MaxLength = 13;
         }
-
+        bool verify()
+        {
+            if ((txtId.Text == "") || (txtNamee.Text == "") || (txtMemberId.Text == "") || (txtBookId.Text == "") || (txtInformation.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             transactioncontrol = new TransactionController();
-            try
+            ValidasiController val = new ValidasiController();
+            if (verify())
             {
-                transactioncontrol.addedTransaction(txtId.Text, dateTimePickerLoan.Value, dateTimePickerReturn.Value, txtNamee.Text, txtMemberId.Text, txtBookId.Text, txtInformation.Text);
-                MessageBox.Show("New Transaction Added", "Add Transaction",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtNamee.Focus();
-                FormTransaction transaction = new FormTransaction();
-                transaction.Show();
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (val.valId(txtId.Text) && val.valId(txtMemberId.Text) && val.valName(txtNamee.Text) && val.valId(txtBookId.Text) && val.valName(txtInformation.Text))
+                {
+                    try
+                    {
+                        transactioncontrol.addedTransaction(txtId.Text, dateTimePickerLoan.Value, dateTimePickerReturn.Value, txtNamee.Text, txtMemberId.Text, txtBookId.Text, txtInformation.Text);
+                        MessageBox.Show("New Transaction Added", "Add Transaction",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtNamee.Focus();
+                        FormTransaction transaction = new FormTransaction();
+                        transaction.Show();
+                        this.Hide();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             FormTransaction transaction = new FormTransaction();
             transaction.Show();
             this.Hide();
+        }
+
+        private void dateTimePickerReturn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (dateTimePickerReturn.Value < dateTimePickerLoan.Value)
+            {
+                MessageBox.Show("The date cannot be in the past", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dateTimePickerReturn.Value = DateTime.Today; 
+            }
+        }
+
+        private void dateTimePickerLoan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (dateTimePickerLoan.Value > DateTime.Now)
+            {
+                MessageBox.Show("The date cannot be in the future", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dateTimePickerReturn.Value = DateTime.Today;
+            }
+
         }
     }
 }

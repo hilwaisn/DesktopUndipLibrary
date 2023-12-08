@@ -76,23 +76,30 @@ namespace DesktopUndipLibrary.View
             book.Show();
             this.Hide();
         }
-
+ 
         private void btnSave_Click(object sender, EventArgs e)
         {
             bookcollectionControl = new BookCollectionController();
-            try
+            ValidasiController val = new ValidasiController();
+            if (verify())
             {
-                bookcollectionControl.addedBookCollection(txtId.Text, txtName.Text);
-                MessageBox.Show("New Book Collection Added", "Add Book Collection",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtId.Focus();
+                if (val.valId(txtId.Text) && val.valName(txtName.Text))
+                {
+                    try
+                    {
+                        bookcollectionControl.addedBookCollection(txtId.Text, txtName.Text);
+                        MessageBox.Show("New Book Collection Added", "Add Book Collection",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtId.Focus();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    showBookCollection();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            showBookCollection();
         }
 
         private void dataGridViewBookCollection_CellClick(object sender, DataGridViewCellEventArgs e)

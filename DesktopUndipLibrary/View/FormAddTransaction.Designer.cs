@@ -59,6 +59,7 @@
             this.dateTimePickerReturn.Name = "dateTimePickerReturn";
             this.dateTimePickerReturn.Size = new System.Drawing.Size(310, 26);
             this.dateTimePickerReturn.TabIndex = 15;
+            this.dateTimePickerReturn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerReturn_KeyPress);
             // 
             // txtBookId
             // 
@@ -258,6 +259,7 @@
             this.dateTimePickerLoan.Name = "dateTimePickerLoan";
             this.dateTimePickerLoan.Size = new System.Drawing.Size(310, 26);
             this.dateTimePickerLoan.TabIndex = 16;
+            this.dateTimePickerLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerLoan_KeyPress);
             // 
             // lblMemberId
             // 

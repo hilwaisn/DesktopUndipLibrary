@@ -172,7 +172,7 @@ namespace DesktopUndipLibrary.Controller
 
         public void deleteTransaction(string id)
         {
-            string delete = "DELETE FROM Transactionn WHERE Id=@id";
+            string delete = "DELETE FROM Transactionn WHERE Id=" + id;
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(delete, GetConn());
@@ -184,7 +184,7 @@ namespace DesktopUndipLibrary.Controller
                 MessageBox.Show("Delete Failed" + ex.Message);
             }
         }
-        
+
         public DataTable searchTransaction(string search)
         {
             DataTable table = new DataTable();

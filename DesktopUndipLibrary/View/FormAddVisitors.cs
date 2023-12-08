@@ -26,29 +26,44 @@ namespace DesktopUndipLibrary.View
             txtNeeds.MaxLength = 10;
             txtSearch.MaxLength = 10;
         }
-
+        bool verify()
+        {
+            if ((txtId.Text == "") || (txtNamee.Text == "") || (txtStudyProgram.Text == "") || (txtNeeds.Text == "") || (txtSearch.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             visitorsController = new VisitorsController();
-            string gender = rbtGenderM.Checked ? "M" : "L";
-            try
+            ValidasiController val = new ValidasiController();
+            string gender = rbtGenderM.Checked ? "M" : "F";
+            if (verify())
             {
-                visitorsController.addedVisitors(txtId.Text, txtNamee.Text, gender, txtStudyProgram.Text, txtNeeds.Text, txtSearch.Text, dateTimePickerVisitors.Value);
-                MessageBox.Show("New Visitors Added", "Add Visitors",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtNamee.Focus();
-                FormVisitors visitors = new FormVisitors();
-                visitors.Show();
-                this.Hide();
+                if (val.valId(txtId.Text) && val.valName(txtNamee.Text) && val.valName(txtNamee.Text) && val.valStudy(txtStudyProgram.Text) && val.valName(txtNeeds.Text) && val.valName(txtSearch.Text))
+                {
+                    try
+                    {
+                        visitorsController.addedVisitors(txtId.Text, txtNamee.Text, gender, txtStudyProgram.Text, txtNeeds.Text, txtSearch.Text, dateTimePickerVisitors.Value);
+                        MessageBox.Show("New Visitors Added", "Add Visitors",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtNamee.Focus();
+                        FormVisitors visitors = new FormVisitors();
+                        visitors.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             FormVisitors visitors = new FormVisitors();

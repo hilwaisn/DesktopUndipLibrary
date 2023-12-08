@@ -80,17 +80,24 @@ namespace DesktopUndipLibrary.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             rackControl = new RackController();
-            try
+            ValidasiController val = new ValidasiController();
+            if (verify())
             {
-                rackControl.addedRack(txtId.Text, txtName.Text);
-                MessageBox.Show("New Rack Added", "Add Rack",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show();
-                txtId.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (val.valId(txtId.Text) && val.valName(txtName.Text))
+                {
+                    try
+                    {
+                        rackControl.addedRack(txtId.Text, txtName.Text);
+                        MessageBox.Show("New Rack Added", "Add Rack",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Show();
+                        txtId.Focus();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             showRack();
         }

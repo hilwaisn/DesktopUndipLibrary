@@ -26,19 +26,38 @@ namespace DesktopUndipLibrary.View
             pictureBoxEyesOpen.Visible = false;
             txtUsername.MaxLength = 10;
             txtPassword.MaxLength = 10;
-        }  
+        }
+        bool verify()
+        {
+            if ((txtUsername.Text == "") || (txtPassword.Text == ""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
             AdminController admController = new AdminController();
-            admController.addedAdmin(txtUsername.Text, txtPassword.Text);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            txtUsername.Focus();
-            MessageBox.Show("Data Saved");
-            DesktopUndipLibrary.FormSign ad = new DesktopUndipLibrary.FormSign();
+            ValidasiController val = new ValidasiController();
+            if (verify())
+            {
+                if (val.valUsername(txtUsername.Text))
+                {
+                    admController.addedAdmin(txtUsername.Text, txtPassword.Text);
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    txtUsername.Focus();
+                    MessageBox.Show("Data Saved");
+                    DesktopUndipLibrary.FormSign ad = new DesktopUndipLibrary.FormSign();
 
-            ad.Show();
-            this.Hide();
+                    ad.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

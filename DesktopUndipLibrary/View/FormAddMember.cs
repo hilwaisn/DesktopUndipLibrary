@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,7 +47,7 @@ namespace DesktopUndipLibrary.View
             ValidasiController val = new ValidasiController();
             if (verify())
             {
-                if (val.valName(txtNamee.Text) && val.valName(txtAddress.Text))
+                if (val.valId(txtMemberId.Text) && val.valName(txtNamee.Text) && val.valPob(txtPlaceofBirth.Text) && val.valAddress(txtAddress.Text)&&val.valStudy(txtStudyProgram.Text)&&val.valTn(txtTelephoneNumber.Text))
                 {
                     try
                     {
@@ -86,6 +87,15 @@ namespace DesktopUndipLibrary.View
         private void txtNamee_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void dateTimePickerDateofBirth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (dateTimePickerDateofBirth.Value > DateTime.Today)
+            {
+                MessageBox.Show("The date cannot be in the future", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dateTimePickerDateofBirth.Value = DateTime.Today;
+            }
         }
     }
 }

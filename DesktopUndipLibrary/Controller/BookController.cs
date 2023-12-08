@@ -66,7 +66,7 @@ namespace DesktopUndipLibrary.Controller
         }
         public void deleteBook(string id)
         {
-            string delete = "DELETE FROM Book WHERE BookId=" + id;
+            string delete = "DELETE FROM Book WHERE BookId=@BookId";
             try
             {
                 cmd = new MySqlConnector.MySqlCommand(delete, GetConn());

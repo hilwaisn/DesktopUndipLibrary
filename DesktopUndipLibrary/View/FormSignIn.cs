@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DesktopUndipLibrary.View
 {
@@ -34,28 +35,48 @@ namespace DesktopUndipLibrary.View
             this.Hide();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        bool verify()
         {
             if ((txtUsername.Text == "") || (txtPassword.Text == ""))
             {
-                MessageBox.Show("Need login data", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
-                string name = txtUsername.Text;
-                string password = txtPassword.Text;
-                DataTable table = adminControl.getList(new MySqlConnector.MySqlCommand
-                    ("SELECT * FROM Admin WHERE Username = '" + name + "' AND Passwordd ='" + password + "'"));
+                return true;
+            }
+        }
 
-                if (table.Rows.Count > 0)
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            ValidasiController val = new ValidasiController();
+            if (verify())
+            {
+                if (val.valUsername(txtUsername.Text))
                 {
-                    FormMain main = new FormMain();
-                    this.Hide();
-                    main.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Your admin and password are not exist", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    if ((txtUsername.Text == "") || (txtPassword.Text == ""))
+                    {
+                        MessageBox.Show("Need login data", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        string name = txtUsername.Text;
+                        string password = txtPassword.Text;
+                        DataTable table = adminControl.getList(new MySqlConnector.MySqlCommand
+                            ("SELECT * FROM Admin WHERE Username = '" + name + "' AND Passwordd ='" + password + "'"));
+
+                        if (table.Rows.Count > 0)
+                        {
+                            FormMain main = new FormMain();
+                            this.Hide();
+                            main.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your admin and password are not exist", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
